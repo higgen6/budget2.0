@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Budget Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Comprehensive Budget Tool</h1>
+        <nav>
+            <ul>
+                <li><a href="#loanCalculator">Loan Payoff Calculator</a></li>
+                <li><a href="#budgetTracker">Monthly Budget Tracker</a></li>
+                <li><a href="#yearlyPlanner">Yearly Budget Planner</a></li>
+                <li><a href="#creditCardCalculator">Credit Card Payoff Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="loanCalculator">
+            <h2>Loan Payoff Calculator</h2>
+            <form id="loanCalculatorForm">
+                <div class="form-group">
+                    <label for="loanAmount">Loan Amount ($):</label>
+                    <input type="number" id="loanAmount" min="1" step="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="interestRate">Annual Interest Rate (%):</label>
+                    <input type="number" id="interestRate" min="0.1" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="loanTerm">Loan Term (years):</label>
+                    <input type="number" id="loanTerm" min="1" required>
+                </div>
+                <button type="button" onclick="calculateLoan()">Calculate</button>
+            </form>
+            <div id="loanResults"></div>
+        </section>
+        
+        <section id="budgetTracker">
+            <h2>Monthly Budget Tracker</h2>
+            <form id="budgetTrackerForm">
+                <div class="form-group">
+                    <label for="monthlyIncome">Monthly Income ($):</label>
+                    <input type="number" id="monthlyIncome" min="0" step="100" required>
+                </div>
+                <div class="expenses-grid">
+                    <div class="expense-item">
+                        <label for="housing">Housing ($):</label>
+                        <input type="number" id="housing" min="0" step="100" required>
+                    </div>
+                    <div class="expense-item">
+                        <label for="food">Food ($):</label>
+                        <input type="number" id="food" min="0" step="100" required>
+                    </div>
+                    <div class="expense-item">
+                        <label for="transport">Transport ($):</label>
+                        <input type="number" id="transport" min="0" step="100" required>
+                    </div>
+                    <div class="expense-item">
+                        <label for="utilities">Utilities ($):</label>
+                        <input type="number" id="utilities" min="0" step="100" required>
+                    </div>
+                </div>
+                <button type="button" onclick="calculateBudget()">Calculate</button>
+            </form>
+            <div id="budgetResults"></div>
+        </section>
+        
+        <section id="yearlyPlanner">
+            <h2>Yearly Budget Planner</h2>
+            <form id="yearlyPlannerForm">
+                <div class="form-group">
+                    <label for="yearlyIncome">Yearly Income ($):</label>
+                    <input type="number" id="yearlyIncome" min="0" step="1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="savingsGoal">Savings Goal (%):</label>
+                    <input type="number" id="savingsGoal" min="0" step="1" required>
+                </div>
+                <button type="button" onclick="calculateYearly()">Calculate</button>
+            </form>
+            <div id="yearlyResults"></div>
+        </section>
+        
+        <section id="creditCardCalculator">
+            <h2>Credit Card Payoff Calculator</h2>
+            <form id="creditCardForm">
+                <div class="form-group">
+                    <label for="creditBalance">Credit Card Balance ($):</label>
+                    <input type="number" id="creditBalance" min="1" step="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="creditInterest">Annual Interest Rate (%):</label>
+                    <input type="number" id="creditInterest" min="0.1" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="creditPayment">Minimum Payment ($):</label>
+                    <input type="number" id="creditPayment" min="1" step="10" required>
+                </div>
+                <button type="button" onclick="calculateCredit()">Calculate</button>
+            </form>
+            <div id="creditResults"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Comprehensive Budget Tool</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
